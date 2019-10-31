@@ -19,7 +19,7 @@ func Date() time.Time {
 // Day ...
 func Day(m int) int {
 	switch m {
-	case 1, 3, 5, 7, 8, 10, 1212:
+	case 1, 3, 5, 7, 8, 10, 12:
 		{
 			return randIntRange(1, 31)
 		}
