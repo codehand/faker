@@ -12,4 +12,18 @@
 
     go get github.com/codehand/faker
     
+## Changes
+* Person
+* Timezone
+* Address
+* Currency
+* Language
+* Geo
+* Phone 
+
+## Features
+* File
+* Image
+* Payment
+
 
