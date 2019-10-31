@@ -1,0 +1,32 @@
+language: go
+
+go:
+- "1.11.4"
+- "1.13"
+- tip # The latest version of Go.
+
+os:
+  - linux
+  - osx
+env:
+- GO111MODULE=on
+
+before_install:
+  - cp .netrc ~
+  - chmod 600 .netrc
+  
+script:
+  - go test -v -race $(go list ./... | grep -v vendor)
+  
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t b6faddcb-7175-4ae3-9365-15f3011f4d83
+
+jobs:
+  include:
+    - stage: Go testing
+      install: true
+      script: echo "Deploying to staging ..."
+    - stage: Docker testing
+      install: true
+      script: echo "Deploying to staging ..."
+    
